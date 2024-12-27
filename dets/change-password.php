@@ -11,7 +11,7 @@ $userid=$_SESSION['detsuid'];
 $cpassword=md5($_POST['currentpassword']);
 $newpassword=md5($_POST['newpassword']);
 $query=mysqli_query($con,"select ID from tbluser where ID='$userid' and   Password='$cpassword'");
-$row=mysqli_fetch_array(             $query                  );
+$row=mysqli_fetch_array($query);
 if($row>0){
 $ret=mysqli_query($con,"update tbluser set Password='$newpassword' where ID='$userid'");
 $msg= "Your password successully changed"; 
